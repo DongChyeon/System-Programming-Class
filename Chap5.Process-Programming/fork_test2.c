@@ -1,4 +1,4 @@
-/* fork_test2.c : accessing variables, by donghyeon, kimdonghyun90766@gmail.com */
+/* fork_test2.c : accessing variables */
 /* Note : This code is borrowed from "Advanced Programming in the Unix Env." */
 #include <unistd.h>
 #include <stdio.h>

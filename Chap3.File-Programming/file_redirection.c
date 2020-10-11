@@ -1,4 +1,4 @@
-/* file_redirection.c, by donghyeon. kimdonghyun90766@gmail.com */
+/* file_redirection.c */
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

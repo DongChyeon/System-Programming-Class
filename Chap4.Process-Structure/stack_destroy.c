@@ -1,4 +1,4 @@
-/* stack_destroy.c: anlaysis stack structure, by donghyeon, kimdonghyun90766@gmail.com */
+/* stack_destroy.c: anlaysis stack structure */
 #include <stdio.h>
 
 void f1() {

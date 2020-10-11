@@ -1,4 +1,4 @@
-/* fork_test3.c, by donghyeon, kimdonghyun90766@gmail.com */
+/* fork_test3.c */
 
 #include <stdio.h>
 #include <sys/types.h>

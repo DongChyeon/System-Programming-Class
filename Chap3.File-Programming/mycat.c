@@ -1,4 +1,4 @@
-/* mycat program, by donghyeon, kimdonghyun90766@gmail.com */
+/* mycat program */
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

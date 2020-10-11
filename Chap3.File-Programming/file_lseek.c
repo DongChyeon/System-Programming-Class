@@ -1,4 +1,4 @@
-/* file_create.c: create a new file, by donghyeon. kimdonghyun90766@gmail.com */
+/* file_create.c: create a new file */
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

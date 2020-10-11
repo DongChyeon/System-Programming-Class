@@ -1,4 +1,4 @@
-/* f_pointer.c: for function pointer exercise, by donghyeon, kimdonghyun90766@gmail.com */
+/* f_pointer.c: for function pointer exercise */
 #include <stdio.h>
 
 int a = 10;

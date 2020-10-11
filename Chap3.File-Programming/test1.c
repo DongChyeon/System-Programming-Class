@@ -1,4 +1,4 @@
-/* file_test1.c: read data from a file, by donghyeon, kimdonghyun90766@gmail.com*/
+/* file_test1.c: read data from a file */
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

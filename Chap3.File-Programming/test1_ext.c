@@ -1,4 +1,4 @@
-/* file_test1_ext.c: read from a file and display them, by donghyeon, kimdonghyeon90766@gmail.com */
+/* file_test1_ext.c: read from a file and display them */
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

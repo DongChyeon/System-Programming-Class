@@ -1,4 +1,4 @@
-/* stack_struct.c : stack structure analysis, by donghyeon, kimdonghyeon90766@gmai.com */
+/* stack_struct.c : stack structure analysis */
 #include <stdio.h>
 
 int func2(int x, int y) {

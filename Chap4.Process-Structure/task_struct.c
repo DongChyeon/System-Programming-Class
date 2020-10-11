@@ -1,4 +1,4 @@
-/* task_struct.c : display addresses of variables and functions, kimdonghyun90766@gmail.com */
+/* task_struct.c : display addresses of variables and functions */
 #include <stdlib.h>
 #include <stdio.h>
 

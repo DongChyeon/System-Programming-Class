@@ -1,4 +1,4 @@
-/* file_device.c, by donghyeon. kimdonghyun90766@gmail.com */
+/* file_device.c */
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
