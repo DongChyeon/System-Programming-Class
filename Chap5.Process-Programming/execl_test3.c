@@ -1,4 +1,4 @@
-/* execl_test3.c : parameter passing */
+/* execl_test3.c : parameter passing, Sept 11, kimdonghyun90766@gmail.com */
 #include <sys/types.h>
 #include <unistd.h>
 #include <stdio.h>

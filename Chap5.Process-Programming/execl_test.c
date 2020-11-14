@@ -1,4 +1,4 @@
-/* execl_test.c : execute a hello program */
+/* execl_test.c : execute a hello program, Sept. 11, kimdonghyun90766@gmail.com */
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>

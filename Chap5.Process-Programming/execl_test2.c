@@ -1,4 +1,4 @@
-/* execl_test2.c : printing argv[] and env[] */
+/* execl_test2.c : printing argv[] and env[], Sept 11, kimdonghyun90766@gmail.com */
 #include <stdio.h>
 int main(int argc, char *argv[], char *envp[]) {
 	int i;

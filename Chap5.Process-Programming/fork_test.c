@@ -1,4 +1,4 @@
-/* fork_test.c example */
+/* fork_test.c example, by donghyeon, kimdonghyun90766gmail.com */
 #include <sys/types.h>
 #include <unistd.h>
 #include <stdio.h>

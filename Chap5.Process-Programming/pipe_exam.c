@@ -1,4 +1,4 @@
-/* Pipe example */
+/* Pipe example by donghyeon, kimdonghyun90766@gmail.com */
 #include <unistd.h>
 #include <stdio.h>
 
