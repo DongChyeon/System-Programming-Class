@@ -34,6 +34,7 @@ int main(int argc, char *argv[]) {
             break;
         default:
             printf("Choose the number from 1 to 3\n");
+            exit(0);
 	    break;
     }
 
@@ -45,7 +46,7 @@ int main(int argc, char *argv[]) {
     func_ptr(array, size);
     gettimeofday(&etime, NULL);
     gap.tv_sec = etime.tv_sec - stime.tv_sec;
-    gap.tv_usec = etime.tv_usec - stime.tv_usec;
+    gap.tv_usec = (etime.tv_sec - stime.tv_sec)*1000000 + etime.tv_usec - stime.tv_usec;
     if (gap.tv_usec < 0) gap.tv_sec = gap.tv_sec - 1;
     printf("Elapsed time %ldsec : %ldusec\n", gap.tv_sec, gap.tv_usec); 
 }

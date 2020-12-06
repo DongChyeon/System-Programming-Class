@@ -28,6 +28,7 @@ void combine3(vec_ptr v, data_t *dest);
 void combine4(vec_ptr v, data_t *dest);
 void combine5(vec_ptr v, data_t *dest);
 void combine6(vec_ptr v, data_t *dest);
+void combine7(vec_ptr v, data_t *dest);
 
 int main(int argc, char *argv[]) {
     int i, choice = 1, loop = 0;
@@ -61,9 +62,13 @@ int main(int argc, char *argv[]) {
         case 6:
             func_ptr = combine6;
             break;
+        case 7:
+            func_ptr = combine7;
+            break;
         default:
             printf("Choose the number from 1 to 6\n");
-	    break;
+            exit(0);
+	        break;
     }
 
     instance = new_vec(loop);
@@ -74,7 +79,7 @@ int main(int argc, char *argv[]) {
     func_ptr(instance, &result);
     gettimeofday(&etime, NULL);
     gap.tv_sec = etime.tv_sec - stime.tv_sec;
-    gap.tv_usec = etime.tv_usec - stime.tv_usec;
+    gap.tv_usec = (etime.tv_sec - stime.tv_sec)*1000000 + etime.tv_usec - stime.tv_usec;
     if (gap.tv_usec < 0) gap.tv_sec = gap.tv_sec - 1;
     printf("Elapsed time %ldsec : %ldusec\n", gap.tv_sec, gap.tv_usec); 
 }
@@ -193,6 +198,22 @@ void combine6(vec_ptr v, data_t *dest) {
     *dest = x0 OPER x1;
 }
 
-int absval(int val) {
-    return (val < 0) ? -val : val;
+void combine7(vec_ptr v, data_t *dest) {
+    int i;
+    int length = vec_length(v);
+    int limit = length - 1;
+    data_t *data = get_vec_start(v);
+    data_t x0 = IDENT;
+    data_t x1 = IDENT;
+    data_t x2 = IDENT;
+
+    for (i = 0; i < limit; i += 9) {
+        x0 = x0 OPER data[i] OPER data[i+1] OPER data[i+2];
+        x1 = x1 OPER data[i+3] OPER data[i+4] OPER data[i+5];
+        x1 = x2 OPER data[i+6] OPER data[i+7] OPER data[i+8];
+    }
+    for (; i < length; i++) {
+        x0 = x0 OPER data[i];
+    }
+    *dest = x0 OPER x1 OPER x2;
 }
