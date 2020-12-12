@@ -1,3 +1,4 @@
+/* combine.c : combine function tes program. by donghyeon */
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/time.h>
@@ -62,13 +63,13 @@ int main(int argc, char *argv[]) {
         case 6:
             func_ptr = combine6;
             break;
-        case 7:
-            func_ptr = combine7;
-            break;
+	case 7:
+	    func_ptr = combine7;
+	    break;
         default:
             printf("Choose the number from 1 to 6\n");
-            exit(0);
-	        break;
+	    exit(0);
+	    break;
     }
 
     instance = new_vec(loop);
@@ -79,7 +80,7 @@ int main(int argc, char *argv[]) {
     func_ptr(instance, &result);
     gettimeofday(&etime, NULL);
     gap.tv_sec = etime.tv_sec - stime.tv_sec;
-    gap.tv_usec = (etime.tv_sec - stime.tv_sec)*1000000 + etime.tv_usec - stime.tv_usec;
+    gap.tv_usec = ((etime.tv_sec - stime.tv_sec)*1000000 + etime.tv_usec - stime.tv_usec) % 1000000;
     if (gap.tv_usec < 0) gap.tv_sec = gap.tv_sec - 1;
     printf("Elapsed time %ldsec : %ldusec\n", gap.tv_sec, gap.tv_usec); 
 }

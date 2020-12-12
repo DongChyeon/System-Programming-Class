@@ -1,3 +1,4 @@
+/* sort.c : sort algorithm test program, by donghyeon */
 #include <stdio.h>
 #include <stdbool.h>
 #include <unistd.h>
@@ -7,6 +8,7 @@
 void selection_sort(int *arr, int n);
 void insertion_sort(int *arr, int n);
 void bubble_sort(int *arr, int n);
+void swap(int *a, int *b);
 
 int main(int argc, char *argv[]) {
     int i, choice = 1, size = 0;
@@ -34,7 +36,6 @@ int main(int argc, char *argv[]) {
             break;
         default:
             printf("Choose the number from 1 to 3\n");
-            exit(0);
 	    break;
     }
 
@@ -46,7 +47,7 @@ int main(int argc, char *argv[]) {
     func_ptr(array, size);
     gettimeofday(&etime, NULL);
     gap.tv_sec = etime.tv_sec - stime.tv_sec;
-    gap.tv_usec = (etime.tv_sec - stime.tv_sec)*1000000 + etime.tv_usec - stime.tv_usec;
+    gap.tv_usec = ((etime.tv_sec - stime.tv_sec)*1000000 + (etime.tv_usec - stime.tv_usec)) % 1000000;
     if (gap.tv_usec < 0) gap.tv_sec = gap.tv_sec - 1;
     printf("Elapsed time %ldsec : %ldusec\n", gap.tv_sec, gap.tv_usec); 
 }
@@ -89,11 +90,15 @@ void bubble_sort(int* arr, int n) {
 		isSorted = false;
 		for (j = 0; j < i; j++) {
 			if (arr[j] > arr[j + 1]) {
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
+                swap(&arr[j], &arr[j + 1]);
 				isSorted = false;
 			}
 		}
 	}
+}
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
